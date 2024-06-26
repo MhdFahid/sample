@@ -10,14 +10,6 @@ class CoursePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    int _page = 0;
-    // GlobalKey<CurvedNavigationBarState> _bottomNavigationKey = GlobalKey();
-
-    final List<Widget> _pages = [
-      const Center(child: Text('Home', style: TextStyle(fontSize: 24))),
-      const Center(child: Text('Search', style: TextStyle(fontSize: 24))),
-      const Center(child: Text('Profile', style: TextStyle(fontSize: 24))),
-    ];
     final size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(

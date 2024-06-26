@@ -2,9 +2,7 @@ import 'package:curved_labeled_navigation_bar/curved_navigation_bar.dart';
 import 'package:curved_labeled_navigation_bar/curved_navigation_bar_item.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:sample/api/api.dart';
 import 'package:sample/course_page.dart';
-import 'package:sample/user_data_model.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -16,19 +14,6 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    List<UserData> uuu = [];
-    ApiService apiService = Get.put(ApiService());
-    // ignore: no_leading_underscores_for_local_identifiers
-    // GlobalKey<CurvedNavigationBarState> _bottomNavigationKey = GlobalKey();
-    // void getData() async {
-    //   uuu = await apiService.getCourses();
-    // }
-
-    final List<Widget> _pages = [
-      const Center(child: Text('Home', style: TextStyle(fontSize: 24))),
-      const Center(child: Text('Search', style: TextStyle(fontSize: 24))),
-      const Center(child: Text('Profile', style: TextStyle(fontSize: 24))),
-    ];
     final size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
@@ -100,7 +85,7 @@ class _HomePageState extends State<HomePage> {
                           style: ElevatedButton.styleFrom(
                               backgroundColor: const Color(0xFF512E7E)),
                           onPressed: () {},
-                          child: Row(
+                          child: const Row(
                             children: [
                               Text(
                                 'Change',
@@ -109,7 +94,7 @@ class _HomePageState extends State<HomePage> {
                                     fontSize: 20,
                                     color: Colors.white),
                               ),
-                              const Icon(Icons.import_export_outlined,
+                              Icon(Icons.import_export_outlined,
                                   color: Colors.white),
                             ],
                           )),
@@ -128,7 +113,7 @@ class _HomePageState extends State<HomePage> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    SizedBox(
+                    const SizedBox(
                       height: 30,
                     ),
                     Row(
@@ -136,21 +121,21 @@ class _HomePageState extends State<HomePage> {
                       children: [
                         IconWithText(
                           onTap: () {
-                            Get.to(() => CoursePage());
+                            Get.to(() => const CoursePage());
                           },
-                          color: Color(0xFFF0778F),
+                          color: const Color(0xFFF0778F),
                           title: '',
                           assetName: 'assets/image (7).png',
                         ),
                         IconWithText(
                           onTap: () {},
-                          color: Color(0xFFF6B73D),
+                          color: const Color(0xFFF6B73D),
                           title: '',
                           assetName: 'assets/image (6).png',
                         ),
                         IconWithText(
                           onTap: () {},
-                          color: Color(0xFF3CB5D5),
+                          color: const Color(0xFF3CB5D5),
                           title: '',
                           assetName: 'assets/image (8).png',
                         ),
@@ -174,24 +159,24 @@ class _HomePageState extends State<HomePage> {
                       children: [
                         IconWithText(
                           onTap: () {
-                            Get.to(() => CoursePage());
+                            Get.to(() => const CoursePage());
                           },
                           radius: 50,
-                          color: Color(0xFF42D2D0),
+                          color: const Color(0xFF42D2D0),
                           title: 'KTET',
                           assetName: 'assets/image (5).png',
                         ),
                         IconWithText(
                           onTap: () {},
                           radius: 50,
-                          color: Color(0xFFFCDB75),
+                          color: const Color(0xFFFCDB75),
                           title: 'LP/UP/HST',
                           assetName: 'assets/image.png',
                         ),
                         IconWithText(
                           onTap: () {},
                           radius: 50,
-                          color: Color(0xFFF6C88E),
+                          color: const Color(0xFFF6C88E),
                           title: 'SET',
                           assetName: 'assets/image (1).png',
                         ),
@@ -205,10 +190,10 @@ class _HomePageState extends State<HomePage> {
                       children: [
                         IconWithText(
                           onTap: () {
-                            Get.to(() => CoursePage());
+                            Get.to(() => const CoursePage());
                           },
                           radius: 50,
-                          color: Color(0xFFFBAEB0),
+                          color: const Color(0xFFFBAEB0),
                           title: 'NET',
                           assetName: 'assets/image (2).png',
                         ),
@@ -216,20 +201,20 @@ class _HomePageState extends State<HomePage> {
                           onTap: () {},
                           radius: 50,
                           boxShape: BoxShape.circle,
-                          color: Color(0xFFBFA3FB),
+                          color: const Color(0xFFBFA3FB),
                           title: 'Montessori',
                           assetName: 'assets/image (3).png',
                         ),
                         IconWithText(
                           onTap: () {},
                           radius: 50,
-                          color: Color(0xFFEF5CAB),
+                          color: const Color(0xFFEF5CAB),
                           title: 'Crash Cour...',
                           assetName: 'assets/image (4).png',
                         ),
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 40,
                     ),
                     Container(
@@ -237,9 +222,9 @@ class _HomePageState extends State<HomePage> {
                       width: double.infinity,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
-                          color: Color(0xFFFBF4DA)),
-                      child: Padding(
-                        padding: const EdgeInsets.all(20.0),
+                          color: const Color(0xFFFBF4DA)),
+                      child: const Padding(
+                        padding: EdgeInsets.all(20.0),
                         child: Text(
                           'Practice With Previous Year \nQuestion Papers',
                           style: TextStyle(
@@ -249,7 +234,7 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 40,
                     ),
                   ],
