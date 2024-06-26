@@ -4,19 +4,25 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sample/api/api.dart';
 import 'package:sample/course_page.dart';
+import 'package:sample/user_data_model.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
   @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  @override
   Widget build(BuildContext context) {
-    
+    List<UserData> uuu = [];
     ApiService apiService = Get.put(ApiService());
     // ignore: no_leading_underscores_for_local_identifiers
-    GlobalKey<CurvedNavigationBarState> _bottomNavigationKey = GlobalKey();
-    void getData() async {
-      await apiService.getCourses();
-    }
+    // GlobalKey<CurvedNavigationBarState> _bottomNavigationKey = GlobalKey();
+    // void getData() async {
+    //   uuu = await apiService.getCourses();
+    // }
 
     final List<Widget> _pages = [
       const Center(child: Text('Home', style: TextStyle(fontSize: 24))),
@@ -94,7 +100,19 @@ class HomePage extends StatelessWidget {
                           style: ElevatedButton.styleFrom(
                               backgroundColor: const Color(0xFF512E7E)),
                           onPressed: () {},
-                          child: const Icon(Icons.cancel_sharp)),
+                          child: Row(
+                            children: [
+                              Text(
+                                'Change',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 20,
+                                    color: Colors.white),
+                              ),
+                              const Icon(Icons.import_export_outlined,
+                                  color: Colors.white),
+                            ],
+                          )),
                       const SizedBox(
                         width: 10,
                       )
@@ -243,7 +261,7 @@ class HomePage extends StatelessWidget {
       ),
       bottomNavigationBar: CurvedNavigationBar(
         backgroundColor: Colors.white,
-        key: _bottomNavigationKey,
+        // key: _bottomNavigationKey,
         index: 2,
         items: const [
           CurvedNavigationBarItem(
@@ -277,7 +295,7 @@ class HomePage extends StatelessWidget {
           //   _page = index;
           // });
         },
-        letIndexChange: (index) => true,
+        // letIndexChange: (index) => true,
       ),
     );
   }

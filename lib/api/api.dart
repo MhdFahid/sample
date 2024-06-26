@@ -2,6 +2,7 @@ import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import '../model.dart';
+import '../user_data_model.dart';
 
 const String baseUrl = 'https://trogon.info/tutorpro/edspark/api/';
 const String token =

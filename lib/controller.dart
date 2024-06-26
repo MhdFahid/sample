@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:sample/user_data_model.dart';
 import 'api/api.dart';
 
 import 'model.dart';
